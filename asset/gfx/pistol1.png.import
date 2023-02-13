@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b32ei26yra1qv"
-path="res://.godot/imported/player.png-ac80f8e8acc1873494d6b58b8700ef6f.ctex"
+uid="uid://bs7gncvjvys4n"
+path="res://.godot/imported/pistol1.png-b212ce5b1eb9bb61312454ecb3e118eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gfx/player.png"
-dest_files=["res://.godot/imported/player.png-ac80f8e8acc1873494d6b58b8700ef6f.ctex"]
+source_file="res://asset/gfx/pistol1.png"
+dest_files=["res://.godot/imported/pistol1.png-b212ce5b1eb9bb61312454ecb3e118eb.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

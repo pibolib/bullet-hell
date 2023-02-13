@@ -1,0 +1,95 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpvlvir57yo0c"]
+
+[ext_resource type="Script" path="res://PlayerModel.gd" id="1_fn4jt"]
+[ext_resource type="Texture2D" uid="uid://b32ei26yra1qv" path="res://asset/gfx/player.png" id="2_qw88x"]
+
+[node name="PlayerModel" type="Node2D"]
+script = ExtResource("1_fn4jt")
+
+[node name="Head" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(0, -9)
+texture = ExtResource("2_qw88x")
+region_enabled = true
+region_rect = Rect2(21, 5, 7, 8)
+
+[node name="Hair" type="Sprite2D" parent="Head"]
+z_index = 5
+texture = ExtResource("2_qw88x")
+region_enabled = true
+region_rect = Rect2(5, 0, 11, 14)
+
+[node name="Hat" type="Sprite2D" parent="Head"]
+z_index = 5
+position = Vector2(0, -5)
+texture = ExtResource("2_qw88x")
+region_enabled = true
+region_rect = Rect2(49, 3, 15, 10)
+
+[node name="Torso" type="Sprite2D" parent="."]
+texture = ExtResource("2_qw88x")
+region_enabled = true
+region_rect = Rect2(4, 17, 13, 10)
+
+[node name="Jacket" type="Sprite2D" parent="Torso"]
+z_index = 4
+position = Vector2(0, 3)
+texture = ExtResource("2_qw88x")
+offset = Vector2(0, 0.5)
+region_enabled = true
+region_rect = Rect2(43, 30, 15, 17)
+
+[node name="Arm" type="Node2D" parent="Torso"]
+
+[node name="Arms" type="Sprite2D" parent="Torso/Arm"]
+position = Vector2(-0.5, -15)
+texture = ExtResource("2_qw88x")
+region_enabled = true
+region_rect = Rect2(34, 20, 2, 6)
+
+[node name="Hand" type="Sprite2D" parent="Torso/Arm"]
+position = Vector2(-1.5, -20)
+texture = ExtResource("2_qw88x")
+offset = Vector2(1, 0.5)
+region_enabled = true
+region_rect = Rect2(34, 7, 3, 5)
+
+[node name="Arms2" type="Sprite2D" parent="Torso/Arm"]
+position = Vector2(0.5, -16)
+texture = ExtResource("2_qw88x")
+region_enabled = true
+region_rect = Rect2(44, 20, 2, 6)
+
+[node name="Hand2" type="Sprite2D" parent="Torso/Arm"]
+position = Vector2(-0.5, -21)
+texture = ExtResource("2_qw88x")
+offset = Vector2(1, 0.5)
+region_enabled = true
+region_rect = Rect2(43, 7, 3, 5)
+
+[node name="Gun" type="Sprite2D" parent="Torso/Arm"]
+position = Vector2(-0.5, -24)
+texture = ExtResource("2_qw88x")
+offset = Vector2(0.5, 0.5)
+region_enabled = true
+region_rect = Rect2(56, 17, 3, 11)
+
+[node name="Legs" type="Sprite2D" parent="."]
+position = Vector2(0, 9)
+texture = ExtResource("2_qw88x")
+region_enabled = true
+region_rect = Rect2(4, 30, 13, 8)
+
+[node name="FootL" type="Sprite2D" parent="Legs"]
+position = Vector2(-7, 8)
+texture = ExtResource("2_qw88x")
+offset = Vector2(0, 0.5)
+region_enabled = true
+region_rect = Rect2(0, 41, 7, 9)
+
+[node name="FootR" type="Sprite2D" parent="Legs"]
+position = Vector2(7, 8)
+texture = ExtResource("2_qw88x")
+offset = Vector2(0, 0.5)
+region_enabled = true
+region_rect = Rect2(14, 41, 7, 9)

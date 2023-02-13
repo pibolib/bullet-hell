@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctl885di1oc1r"
-path="res://.godot/imported/sniper1.png-ec263203eb19fb90b8cc908849a4730e.ctex"
+uid="uid://b32ei26yra1qv"
+path="res://.godot/imported/player.png-90a00867e9eb8e680deccd7f611b26d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gfx/sniper1.png"
-dest_files=["res://.godot/imported/sniper1.png-ec263203eb19fb90b8cc908849a4730e.ctex"]
+source_file="res://asset/gfx/player.png"
+dest_files=["res://.godot/imported/player.png-90a00867e9eb8e680deccd7f611b26d4.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
 mipmaps/limit=-1
-roughness/mode=1
+roughness/mode=0
 roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

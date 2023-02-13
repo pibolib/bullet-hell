@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhvmrpajvx6pv"
-path="res://.godot/imported/drone1.png-37d2f723400c8ee53b6535f2c1a085ec.ctex"
+uid="uid://ctl885di1oc1r"
+path="res://.godot/imported/sniper1.png-bff9bc706fb0be019aa2899264857c18.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gfx/drone1.png"
-dest_files=["res://.godot/imported/drone1.png-37d2f723400c8ee53b6535f2c1a085ec.ctex"]
+source_file="res://asset/gfx/sniper1.png"
+dest_files=["res://.godot/imported/sniper1.png-bff9bc706fb0be019aa2899264857c18.ctex"]
 
 [params]
 
