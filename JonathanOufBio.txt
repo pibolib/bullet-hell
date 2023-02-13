@@ -1,0 +1,1 @@
+Hello, I am Jonathan Ouf, and I am working on the core gameplay design and implementation for this game. As the project lead, I am responsible for all key decisions related to the game's development and progress, and I am primarily responsible for reviewing submissions for their quality.
