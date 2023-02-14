@@ -1,0 +1,3 @@
+My name is Eric Lin., the artist/designer for our project.
+I create the sprites and textures for our characters and backgrounds.
+I am currently a freshman at Drexel University, and I major in Computer Science.
