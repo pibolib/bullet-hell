@@ -1,6 +1,8 @@
 extends Area2D
 class_name Player
 
+const PLAYER_BULLET := preload("res://scene/MainGame/Player/PlayerBullet.tscn")
+
 const PLAYER_SPEED: float = 75
 const PLAYER_SPEED_FOCUS_MODIFIER: float = 0.5
 var velocity := Vector2.ZERO
@@ -15,6 +17,10 @@ func _unhandled_input(event):
 	if event is InputEventMouseMotion and Global.get_mouse_captured_status():
 		aim_dir += event.relative.x / Global.get_mouse_sensitivity()
 		aim_dir = clamp(aim_dir, -PI/2, PI/2) # clamp gun angle between two values
+	if event.is_action_pressed("ingame_fire"):
+		var new_bullet := PLAYER_BULLET.instantiate()
+		new_bullet.set_start_point(%Model.get_firing_position()).set_angle(aim_dir)
+		add_sibling(new_bullet)
 
 func _process(delta):
 	#handle input detection (properly handles multidirectional movement)

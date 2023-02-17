@@ -92,6 +92,10 @@ offset = Vector2(0.5, 0.5)
 region_enabled = true
 region_rect = Rect2(56, 17, 3, 11)
 
+[node name="BulletSpawn" type="Marker2D" parent="CanvasGroup/Torso/Arm"]
+unique_name_in_owner = true
+position = Vector2(0, -29)
+
 [node name="Legs" type="Sprite2D" parent="CanvasGroup"]
 position = Vector2(0, 9)
 texture = ExtResource("2_qw88x")
