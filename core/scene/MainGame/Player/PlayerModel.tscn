@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bpvlvir57yo0c"]
 
-[ext_resource type="Script" path="res://PlayerModel.gd" id="1_fn4jt"]
+[ext_resource type="Script" path="res://scene/MainGame/Player/PlayerModel.gd" id="1_biag0"]
 [ext_resource type="Texture2D" uid="uid://b32ei26yra1qv" path="res://asset/gfx/player.png" id="2_qw88x"]
 
 [sub_resource type="Animation" id="Animation_q8jxt"]
@@ -12,7 +12,7 @@ _data = {
 }
 
 [node name="PlayerModel" type="Node2D" node_paths=PackedStringArray("animation_controller")]
-script = ExtResource("1_fn4jt")
+script = ExtResource("1_biag0")
 animation_controller = NodePath("AnimationPlayer")
 metadata/_edit_group_ = true
 
