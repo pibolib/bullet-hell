@@ -1,20 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bpvlvir57yo0c"]
 
+[ext_resource type="Script" path="res://scene/MainGame/Player/PlayerModel.gd" id="1_biag0"]
 [ext_resource type="Texture2D" uid="uid://b32ei26yra1qv" path="res://asset/gfx/player.png" id="2_qw88x"]
-
-[sub_resource type="GDScript" id="GDScript_iboj3"]
-script/source = "extends CharacterModel
-
-var aim_dir: float = 0.0
-
-func _dynamic_animation(_animation_time: float):
-	match current_animation:
-		_:
-			%Arm.rotation = aim_dir
-
-func get_firing_position() -> Vector2:
-	return %BulletSpawn.global_position
-"
 
 [sub_resource type="Animation" id="Animation_q8jxt"]
 resource_name = "Idle"
@@ -25,7 +12,7 @@ _data = {
 }
 
 [node name="PlayerModel" type="Node2D" node_paths=PackedStringArray("animation_controller")]
-script = SubResource("GDScript_iboj3")
+script = ExtResource("1_biag0")
 animation_controller = NodePath("AnimationPlayer")
 metadata/_edit_group_ = true
 
