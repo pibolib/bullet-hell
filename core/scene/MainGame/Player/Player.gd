@@ -50,6 +50,7 @@ func _process(delta):
 	position += velocity * delta
 	
 	#end of logic, update model
+	GameVariables.player_position = position
 	update_model()
 
 func update_model():

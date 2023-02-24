@@ -28,3 +28,6 @@ func set_animation(new_animation_name: String) -> void:
 
 func get_animation() -> String:
 	return animation_controller.current_animation
+
+func queue_animation(animation_name: String) -> void:
+	animation_controller.queue(animation_name)
