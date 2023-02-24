@@ -11,8 +11,8 @@ enum Status {
 #general enemy exports
 @export var hp: int = 1
 @export var dodges: int = 0
+@export var score: int = 0
 @export var start_delay = 0
-@export var animation_player: AnimationPlayer
 @export var model: CharacterModel
 
 #other vars
@@ -21,29 +21,37 @@ var substate: int = 0
 var velocity := Vector2.ZERO
 var acceleration := Vector2.ZERO
 var friction: float = 0
+@onready var state_timer := Timer.new()
 
 func _ready():
-	if model == null:
-		model = $Model
-	if animation_player == null:
-		animation_player = $AnimationPlayer
+	add_child(state_timer)
+	state_timer.connect("timeout", handle_current_state)
+	state_timer.one_shot = true
+	set_stats()
 	set_process(false)
 	await get_tree().create_timer(start_delay, false).timeout
+	set_process(true)
 	init_state(Status.IDLE)
 
 func _process(delta):
 	position += velocity * delta
 	velocity += acceleration * delta
-	velocity -= velocity * (friction * delta)
+	#velocity -= velocity * (friction * delta)
 
 func set_substate(new_substate: int) -> void:
 	substate = new_substate
 
-#super this
-func init_state(new_state: Status, substate_flag: int = 0) -> void:
+#override this
+func set_stats() -> void:
+	pass
+	
+#override and super this
+func init_state(new_state: Status, new_substate: int = 0) -> void:
 	state = new_state
+	substate = new_substate
 
-func handle_state(state: Status, substate: int) -> void:
+#override this
+func handle_state(current_state: Status, current_substate: int) -> void:
 	pass
 
 func handle_current_state() -> void: #version of handle_state for use in animations.
@@ -64,3 +72,29 @@ func take_damage() -> void:
 	if hp <= 0:
 		init_state(Status.DIE)
 	#other things that happen when damage is taken goes here
+
+func set_velocity(new_velocity: Vector2) -> void:
+	velocity = new_velocity
+	pass
+
+func set_velocity_magnitude(new_magnitude: float) -> void:
+	velocity = velocity.normalized() * new_magnitude
+
+func set_velocity_direction(new_direction_radians: float) -> void:
+	var current_magnitude: float = velocity.length()
+	velocity = Vector2.from_angle(new_direction_radians) * current_magnitude
+	
+func set_acceleration(new_acceleration: Vector2) -> void:
+	acceleration = new_acceleration
+
+func set_acceleration_magnitude(new_magnitude: float) -> void:
+	acceleration = acceleration.normalized() * new_magnitude
+
+func set_acceleration_direction(new_direction_radians: float) -> void:
+	var current_magnitude: float = acceleration.length()
+	acceleration = Vector2.from_angle(new_direction_radians) * current_magnitude
+
+func fire_pattern(pattern: PackedScene) -> void:
+	var new_pattern := pattern.instantiate()
+	new_pattern.position = position
+	add_sibling(new_pattern)

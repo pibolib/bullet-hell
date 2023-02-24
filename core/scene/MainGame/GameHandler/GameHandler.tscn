@@ -1,9 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://pwqrtfyp6mm4"]
+[gd_scene load_steps=3 format=3 uid="uid://pwqrtfyp6mm4"]
 
 [ext_resource type="PackedScene" uid="uid://bkv4vdid4s20l" path="res://scene/MainGame/Player/Player.tscn" id="1_d386p"]
+[ext_resource type="PackedScene" uid="uid://bwg0b7e45khyn" path="res://scene/MainGame/Stages/Stage1/RifleTypeA.tscn" id="2_3bpwa"]
 
 [node name="GameHandler" type="Node2D"]
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_d386p")]
-position = Vector2(127, 115)
+position = Vector2(140, 273)
+
+[node name="RifleTypeA" parent="." instance=ExtResource("2_3bpwa")]
+position = Vector2(-17, 162)
+
+[node name="RifleTypeA2" parent="." instance=ExtResource("2_3bpwa")]
+position = Vector2(319, 161)
+entry_direction = 1

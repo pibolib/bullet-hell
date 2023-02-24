@@ -1,4 +1,5 @@
 extends CharacterModel
+class_name PlayerModel
 
 var aim_dir: float = 0.0
 
