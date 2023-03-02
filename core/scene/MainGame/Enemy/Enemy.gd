@@ -21,6 +21,9 @@ var substate: int = 0
 var velocity := Vector2.ZERO
 var acceleration := Vector2.ZERO
 var friction: float = 0
+var attributes: Dictionary = {}
+var uses_control_tag: bool = false
+var tag_name = ""
 @onready var state_timer := Timer.new()
 
 func _ready():
@@ -37,6 +40,13 @@ func _process(delta):
 	position += velocity * delta
 	velocity += acceleration * delta
 	#velocity -= velocity * (friction * delta)
+	if is_out_of_bounds():
+		queue_free()
+
+func is_out_of_bounds() -> bool:
+	if position.x < 0 - GameVariables.despawn_bounds or position.x > GameVariables.screen_size.x + GameVariables.despawn_bounds or position.y < 0 - GameVariables.despawn_bounds or position.y > GameVariables.screen_size.y + GameVariables.despawn_bounds:
+		return true
+	return false
 
 func set_substate(new_substate: int) -> void:
 	substate = new_substate
@@ -51,14 +61,14 @@ func init_state(new_state: Status, new_substate: int = 0) -> void:
 	substate = new_substate
 
 #override this
-func handle_state(current_state: Status, current_substate: int) -> void:
+func handle_state(_current_state: Status, _current_substate: int) -> void:
 	pass
 
 func handle_current_state() -> void: #version of handle_state for use in animations.
 	handle_state(state, substate)
 
 #override this with dodge logic if needed
-func dodge(bullet: PlayerBullet) -> void:
+func dodge(_bullet: PlayerBullet) -> void:
 	pass
 	
 func on_bullet_collision(bullet: PlayerBullet) -> void:
@@ -98,3 +108,12 @@ func fire_pattern(pattern: PackedScene) -> void:
 	var new_pattern := pattern.instantiate()
 	new_pattern.position = position
 	add_sibling(new_pattern)
+
+func _exit_tree():
+	if uses_control_tag:
+		get_parent().control_tag.increment_current_value()
+	if tag_name != "":
+		for tag in get_parent().active_tags:
+			if tag.name == tag_name:
+				tag.increment_current_value()
+				break

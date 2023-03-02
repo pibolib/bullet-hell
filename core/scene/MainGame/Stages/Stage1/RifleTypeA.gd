@@ -18,12 +18,12 @@ func init_state(new_state: Status, new_substate: int = 0) -> void:
 	super(new_state, new_substate)
 	match new_state:
 		Status.IDLE:
-			match entry_direction:
+			match attributes.entry_direction:
 				0:
 					set_velocity(Vector2(movement_speed, 0))
 				1:
 					set_velocity(Vector2(-movement_speed, 0))
-			match movement_trend: #test this
+			match attributes.movement_trend: #test this
 				0:
 					set_acceleration(Vector2(0, -10))
 				1:
@@ -39,7 +39,7 @@ func init_state(new_state: Status, new_substate: int = 0) -> void:
 					model.set_animation("Fire")
 					model.queue_animation("Ready")
 					fire_pattern(patterns[0])
-					state_timer.start(attack_barrage_delay)
+					state_timer.start(attributes.attack_barrage_delay)
 				2:
 					model.set_animation("Idle")
 		Status.DIE:
@@ -56,8 +56,8 @@ func handle_state(current_state: Status, current_substate: int = 0) -> void:
 				0:
 					init_state(Status.ACTIVE, 1)
 				1:
-					attack_count -= 1
-					if attack_count == 0:
+					attributes.attack_count -= 1
+					if attributes.attack_count == 0:
 						init_state(Status.ACTIVE, 2)
 					else:
 						init_state(Status.ACTIVE, 1)

@@ -6,11 +6,10 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_3macy"]
 radius = 11.0
 
-[node name="RifleTypeA" type="Area2D" node_paths=PackedStringArray("animation_player", "model")]
+[node name="RifleTypeA" type="Area2D" node_paths=PackedStringArray("model")]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_5up8s")
-animation_player = NodePath("")
 model = NodePath("ModelPlaceholder")
 
 [node name="ModelPlaceholder" parent="." instance=ExtResource("2_ehkmv")]
