@@ -14,4 +14,3 @@ position = Vector2(-17, 162)
 
 [node name="RifleTypeA2" parent="." instance=ExtResource("2_3bpwa")]
 position = Vector2(319, 161)
-entry_direction = 1

@@ -22,6 +22,7 @@ var velocity := Vector2.ZERO
 var acceleration := Vector2.ZERO
 var friction: float = 0
 var attributes: Dictionary = {}
+var attribute_defaults: Dictionary = {}
 var uses_control_tag: bool = false
 var tag_name = ""
 @onready var state_timer := Timer.new()
@@ -31,6 +32,7 @@ func _ready():
 	state_timer.connect("timeout", handle_current_state)
 	state_timer.one_shot = true
 	set_stats()
+	attributes.merge(attribute_defaults, false)
 	set_process(false)
 	await get_tree().create_timer(start_delay, false).timeout
 	set_process(true)

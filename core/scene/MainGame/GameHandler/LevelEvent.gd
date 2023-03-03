@@ -4,7 +4,7 @@ class_name LevelEvent
 signal tag_condition_reached(tag)
 signal control_tag_condition_reached
 
-class Event: 
+class Event:
 	func _init() -> void:
 		pass
 
@@ -33,7 +33,7 @@ class EntitySpawnEvent:
 		self.entity_type = entity_type
 		self.location = location
 		self.attributes = attributes
-	func set_tag(tag_name: String) -> EntitySpawnEvent:
+	func set_tag(tag_name: String) -> EntitySpawnEvent: #tag functionality (to be implemented in 103)
 		self.tag = tag_name
 		return self
 	func set_control_tag() -> EntitySpawnEvent:
