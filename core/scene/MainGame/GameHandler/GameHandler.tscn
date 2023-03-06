@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://pwqrtfyp6mm4"]
+[gd_scene load_steps=4 format=3 uid="uid://pwqrtfyp6mm4"]
 
 [ext_resource type="PackedScene" uid="uid://bkv4vdid4s20l" path="res://scene/MainGame/Player/Player.tscn" id="1_d386p"]
 [ext_resource type="PackedScene" uid="uid://bwg0b7e45khyn" path="res://scene/MainGame/Stages/Stage1/RifleTypeA.tscn" id="2_3bpwa"]
+[ext_resource type="PackedScene" uid="uid://c216qvymdaqux" path="res://scene/MainGame/Stages/Stage1/ShotgunTypeA.tscn" id="3_uerak"]
 
 [node name="GameHandler" type="Node"]
 metadata/_edit_lock_ = true
@@ -10,7 +11,10 @@ metadata/_edit_lock_ = true
 position = Vector2(140, 273)
 
 [node name="RifleTypeA" parent="." instance=ExtResource("2_3bpwa")]
-position = Vector2(-17, 162)
+position = Vector2(-37, 37)
 
 [node name="RifleTypeA2" parent="." instance=ExtResource("2_3bpwa")]
 position = Vector2(319, 161)
+
+[node name="ShotgunTypeA" parent="." instance=ExtResource("3_uerak")]
+position = Vector2(-2, 99)

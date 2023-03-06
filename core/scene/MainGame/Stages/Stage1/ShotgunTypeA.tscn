@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://c216qvymdaqux"]
+
+[ext_resource type="Script" path="res://scene/MainGame/Stages/Stage1/ShotgunTypeA.gd" id="1_45hyv"]
+[ext_resource type="PackedScene" uid="uid://cg7uwdsw7aoub" path="res://scene/MainGame/CharacterModel/ModelPlaceholder.tscn" id="2_uu4mo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4u00t"]
+radius = 11.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jkstn"]
+
+[node name="ShotgunTypeA" type="Area2D" node_paths=PackedStringArray("model")]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_45hyv")
+model = NodePath("ModelPlaceholder")
+
+[node name="ModelPlaceholder" parent="." instance=ExtResource("2_uu4mo")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4u00t")
+
+[node name="RepelRange" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RepelRange"]
+shape = SubResource("CircleShape2D_jkstn")

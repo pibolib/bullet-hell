@@ -111,6 +111,9 @@ func fire_pattern(pattern: PackedScene) -> void:
 	new_pattern.position = position
 	add_sibling(new_pattern)
 
+func get_angle_to_player(start_position) -> float:
+	return start_position.angle_to_point(GameVariables.player_position)
+
 func _exit_tree():
 	if uses_control_tag:
 		get_parent().control_tag.increment_current_value()
