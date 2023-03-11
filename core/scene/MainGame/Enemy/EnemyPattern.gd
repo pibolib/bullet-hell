@@ -20,5 +20,5 @@ func shoot_bullet_sniper(bullet_type: PackedScene) -> void:
 	new_bullet.target_point = GameVariables.player_position
 	add_sibling(new_bullet)
 
-func get_angle_to_player(start_position) -> float:
+func get_angle_to_player(start_position: Vector2) -> float:
 	return rad_to_deg(start_position.angle_to_point(GameVariables.player_position))

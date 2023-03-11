@@ -1,18 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://bwg0b7e45khyn"]
 
 [ext_resource type="Script" path="res://scene/MainGame/Stages/Stage1/RifleTypeA.gd" id="1_5up8s"]
-[ext_resource type="PackedScene" uid="uid://cg7uwdsw7aoub" path="res://scene/MainGame/CharacterModel/ModelPlaceholder.tscn" id="2_ehkmv"]
+[ext_resource type="PackedScene" uid="uid://cb5itsm6t8rq8" path="res://scene/MainGame/CharacterModel/RifleTypeModel.tscn" id="3_jhos5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3macy"]
-radius = 11.0
+radius = 16.0
 
 [node name="RifleTypeA" type="Area2D" node_paths=PackedStringArray("model")]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_5up8s")
-model = NodePath("ModelPlaceholder")
-
-[node name="ModelPlaceholder" parent="." instance=ExtResource("2_ehkmv")]
+model = NodePath("RifleTypeModel")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3macy")
+
+[node name="RifleTypeModel" parent="." instance=ExtResource("3_jhos5")]

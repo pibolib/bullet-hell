@@ -1,0 +1,324 @@
+[gd_scene load_steps=9 format=3 uid="uid://dpgkbg2vohhq2"]
+
+[ext_resource type="Script" path="res://scene/MainGame/CharacterModel/RifleTypeModel.gd" id="1_t1057"]
+[ext_resource type="Texture2D" uid="uid://cf1tkbglldak8" path="res://asset/gfx/rifle1.png" id="2_gf701"]
+[ext_resource type="Texture2D" uid="uid://bbrvdylirakgc" path="res://asset/gfx/shotgun1.png" id="2_mi6hy"]
+
+[sub_resource type="Animation" id="Animation_74qqr"]
+resource_name = "Idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Model/Torso/Rest:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Model/Torso/Aim:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_vmy1p"]
+resource_name = "Ready"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Model/Torso/Aim:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Model/Torso/Rest:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_w65r2"]
+resource_name = "Fire"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Model/Torso/Rest:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Model/Torso/Aim:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Model/Torso/Aim/GunAimed:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -4), Vector2(0, -4), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Model/Torso/Aim/GunAimed/MuzzleFlash:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_gujxk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Model/Torso/Rest:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Model/Torso/Aim:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Model/Torso/Aim/GunAimed:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Model/Torso/Aim/GunAimed/MuzzleFlash:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_be3s7"]
+_data = {
+"Fire": SubResource("Animation_w65r2"),
+"Idle": SubResource("Animation_74qqr"),
+"RESET": SubResource("Animation_gujxk"),
+"Ready": SubResource("Animation_vmy1p")
+}
+
+[node name="ShotgunTypeModel" type="Node2D" node_paths=PackedStringArray("animation_controller")]
+script = ExtResource("1_t1057")
+animation_controller = NodePath("AnimationPlayer")
+
+[node name="Model" type="Node2D" parent="."]
+
+[node name="Head" type="Sprite2D" parent="Model"]
+position = Vector2(0, -8)
+texture = ExtResource("2_mi6hy")
+offset = Vector2(0, 0.5)
+region_enabled = true
+region_rect = Rect2(3, 0, 13, 13)
+
+[node name="Torso" type="Sprite2D" parent="Model"]
+z_index = -1
+texture = ExtResource("2_mi6hy")
+region_enabled = true
+region_rect = Rect2(3, 17, 13, 10)
+
+[node name="Rest" type="Node2D" parent="Model/Torso"]
+visible = false
+
+[node name="ArmL" type="Sprite2D" parent="Model/Torso/Rest"]
+z_index = -1
+position = Vector2(-6, 3)
+texture = ExtResource("2_mi6hy")
+offset = Vector2(0.5, 0)
+region_enabled = true
+region_rect = Rect2(25, 20, 2, 6)
+
+[node name="ArmR" type="Sprite2D" parent="Model/Torso/Rest"]
+z_index = -1
+position = Vector2(5, 3)
+texture = ExtResource("2_mi6hy")
+offset = Vector2(0.5, 0)
+region_enabled = true
+region_rect = Rect2(34, 20, 2, 6)
+
+[node name="Gun" type="Sprite2D" parent="Model/Torso/Rest"]
+z_index = 4
+position = Vector2(2, 5)
+rotation = -1.5708
+texture = ExtResource("2_mi6hy")
+offset = Vector2(0.5, 0.5)
+region_enabled = true
+region_rect = Rect2(54, 2, 8, 30)
+
+[node name="HandL" type="Sprite2D" parent="Model/Torso/Rest/Gun"]
+z_index = -1
+position = Vector2(-1, -6)
+texture = ExtResource("2_mi6hy")
+region_enabled = true
+region_rect = Rect2(25, 7, 3, 5)
+
+[node name="HandR" type="Sprite2D" parent="Model/Torso/Rest/Gun"]
+z_index = -1
+position = Vector2(2, 5)
+texture = ExtResource("2_mi6hy")
+region_enabled = true
+region_rect = Rect2(34, 7, 4, 4)
+
+[node name="Aim" type="Node2D" parent="Model/Torso"]
+
+[node name="ArmL" type="Sprite2D" parent="Model/Torso/Aim"]
+z_index = -1
+position = Vector2(-5.5, 0.5)
+texture = ExtResource("2_mi6hy")
+region_enabled = true
+region_rect = Rect2(25, 20, 2, 3)
+
+[node name="ArmR" type="Sprite2D" parent="Model/Torso/Aim"]
+z_index = -1
+position = Vector2(5.5, 0.5)
+texture = ExtResource("2_mi6hy")
+region_enabled = true
+region_rect = Rect2(34, 20, 2, 3)
+
+[node name="GunAimed" type="Sprite2D" parent="Model/Torso/Aim"]
+unique_name_in_owner = true
+z_index = 5
+texture = ExtResource("2_mi6hy")
+offset = Vector2(0.5, 0)
+region_enabled = true
+region_rect = Rect2(45, 2, 3, 30)
+
+[node name="ArmL" type="Sprite2D" parent="Model/Torso/Aim/GunAimed"]
+z_index = -1
+position = Vector2(-1, -6)
+texture = ExtResource("2_mi6hy")
+offset = Vector2(0, -0.5)
+region_enabled = true
+region_rect = Rect2(25, 23, 2, 3)
+
+[node name="HandL" type="Sprite2D" parent="Model/Torso/Aim/GunAimed/ArmL"]
+z_index = -1
+position = Vector2(0, 3)
+texture = ExtResource("2_mi6hy")
+offset = Vector2(0.5, 0.5)
+region_enabled = true
+region_rect = Rect2(25, 7, 3, 5)
+
+[node name="ArmR" type="Sprite2D" parent="Model/Torso/Aim/GunAimed"]
+z_index = -1
+position = Vector2(0, 4)
+texture = ExtResource("2_mi6hy")
+offset = Vector2(0, -0.5)
+region_enabled = true
+region_rect = Rect2(34, 23, 2, 3)
+
+[node name="HandR" type="Sprite2D" parent="Model/Torso/Aim/GunAimed/ArmR"]
+z_index = -1
+position = Vector2(0, 2)
+texture = ExtResource("2_mi6hy")
+region_enabled = true
+region_rect = Rect2(34, 7, 4, 4)
+
+[node name="MuzzleFlash" type="Polygon2D" parent="Model/Torso/Aim/GunAimed"]
+position = Vector2(15.5, 10)
+polygon = PackedVector2Array(-16, 4, -14, 4, -14, 6, -16, 6)
+
+[node name="Legs" type="Sprite2D" parent="Model"]
+z_index = -4
+position = Vector2(0, 7)
+texture = ExtResource("2_mi6hy")
+region_enabled = true
+region_rect = Rect2(4, 30, 11, 8)
+
+[node name="FootL" type="Sprite2D" parent="Model/Legs"]
+z_index = -2
+position = Vector2(-5, 7)
+texture = ExtResource("2_mi6hy")
+region_enabled = true
+region_rect = Rect2(0, 41, 5, 6)
+
+[node name="FootR" type="Sprite2D" parent="Model/Legs"]
+z_index = -2
+position = Vector2(5, 7)
+texture = ExtResource("2_mi6hy")
+region_enabled = true
+region_rect = Rect2(13, 41, 5, 6)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_be3s7")
+}
+
+[node name="Reference" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-68, -20)
+texture = ExtResource("2_gf701")
+metadata/_edit_lock_ = true
