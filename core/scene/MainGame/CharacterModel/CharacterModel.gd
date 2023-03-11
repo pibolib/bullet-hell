@@ -18,12 +18,12 @@ func _process(_delta):
 	_dynamic_animation(current_animation_time)
 
 #this should be the only function that needs to be overrided. pass in special animation arguments through
-#set_custom_animation_arguments and set_custom_animation_element.
 func _dynamic_animation(_animation_time: float) -> void:
 	pass
 
 #various getters/setters for values.
 func set_animation(new_animation_name: String) -> void:
+	current_animation = new_animation_name
 	animation_controller.play(new_animation_name)
 
 func get_animation() -> String:
@@ -31,3 +31,6 @@ func get_animation() -> String:
 
 func queue_animation(animation_name: String) -> void:
 	animation_controller.queue(animation_name)
+
+func get_angle_to_player(start_position: Vector2) -> float:
+	return start_position.angle_to_point(GameVariables.player_position)-PI/2

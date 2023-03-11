@@ -33,7 +33,7 @@ func init_state(new_state: Status, new_substate: int = 0) -> void:
 					model.set_animation("Idle")
 		Status.DIE:
 			#score here
-			model.animation("Die")
+			model.set_animation("Die")
 			state_timer.start(1.5)
 
 func handle_state(current_state: Status, current_substate: int = 0) -> void:
