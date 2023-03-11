@@ -16,6 +16,7 @@ func set_stats() -> void:
 
 func init_state(new_state: Status, new_substate: int = 0) -> void:
 	super(new_state, new_substate)
+	# this should be moved to a more suitable position (in the IDLE state)
 	$RepelRange/CollisionShape2D.shape.radius = attributes.repel_range
 	match new_state:
 		Status.IDLE:
