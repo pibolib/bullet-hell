@@ -40,6 +40,15 @@ class EntitySpawnEvent:
 		self.uses_control_tag = true
 		return self
 
+class BackgroundScrollEvent:
+	extends ControlEvent
+	var position_to: float
+	var time: float
+	func _init(position_to, time) -> void:
+		super()
+		self.position_to = position_to
+		self.time = time
+
 #class DialogueEvent
 
 #class TagWaitEvent
@@ -75,6 +84,7 @@ var control_tag := Tag.new("Control",-1)
 
 func _ready():
 	event_timer.one_shot = true
+	add_child(event_timer)
 	define_level()
 	start_event(events[0])
 
@@ -104,6 +114,9 @@ func start_event(event: Event) -> void:
 	elif event is ControlTagWaitEvent:
 		control_tag.set_current_value(0).set_value(event.value)
 		await control_tag_condition_reached
+	elif event is BackgroundScrollEvent:
+		var tween = get_tree().create_tween()
+		tween.tween_property($Background, "position:y", event.position_to, event.time)
 	event_index += 1
 	if !(event is LevelEndEvent):
 		start_event(events[event_index])
@@ -120,5 +133,15 @@ func control_tag_wait(value: int) -> ControlTagWaitEvent:
 
 func spawn_entity(type: PackedScene, location: Vector2, attributes: Dictionary = {}) -> EntitySpawnEvent:
 	var event := EntitySpawnEvent.new(type, location, attributes)
+	events.append(event)
+	return event
+
+func background_scroll(pos_to: float, time: float) -> BackgroundScrollEvent:
+	var event := BackgroundScrollEvent.new(pos_to, time)
+	events.append(event)
+	return event
+
+func level_end() -> LevelEndEvent:
+	var event := LevelEndEvent.new()
 	events.append(event)
 	return event

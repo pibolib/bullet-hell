@@ -11,7 +11,7 @@ func set_stats() -> void:
 		"attack_type": "Aimed", #valid keys: Aimed, Vertical (unimplemented)
 		"attack_barrage_delay": 1.0, #range: 0.1 - 1.0
 		"movement_speed": 120, #any value
-		"repel_range": 50 #some value
+		"repel_range": 100 #some value
 	}
 
 func init_state(new_state: Status, new_substate: int = 0) -> void:
