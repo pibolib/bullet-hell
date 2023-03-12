@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgt6retyrn17v"]
+
+[ext_resource type="Script" path="res://scene/MainGame/Stages/Stage1/SniperTypeAPatternA.gd" id="1_tuedh"]
+
+[node name="SniperTypeAPatternA" type="Node2D"]
+script = ExtResource("1_tuedh")

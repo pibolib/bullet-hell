@@ -2,6 +2,7 @@ extends EnemyPattern
 
 const STANDARD_SHOT: PackedScene = preload("res://scene/MainGame/Enemy/EnemyBulletBasic.tscn")
 
+#bullet attributes
 const BULLET_SPEED: float = 130
 const BULLET_POSITION_OFFSET: float = 10
 
