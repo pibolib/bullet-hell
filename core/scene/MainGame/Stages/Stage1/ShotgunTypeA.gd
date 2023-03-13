@@ -8,7 +8,6 @@ func set_stats() -> void:
 	dodges = 0
 	score = 500
 	attribute_defaults = {
-		"attack_type": "Aimed", #valid keys: Aimed, Vertical (unimplemented)
 		"attack_barrage_delay": 1.0, #range: 0.1 - 1.0
 		"movement_speed": 120, #any value
 		"repel_range": 100 #some value
