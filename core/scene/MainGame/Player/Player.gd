@@ -48,6 +48,7 @@ func _process(delta):
 	velocity = Vector2.from_angle(movement_angle) * PLAYER_SPEED * int(is_moving)# * (PLAYER_SPEED_FOCUS_MODIFIER * int(focused))
 	velocity = round(velocity)
 	position += velocity * delta
+	position.x = clamp(position.x, 0, 300)
 	
 	#end of logic, update model
 	GameVariables.player_position = position

@@ -61,6 +61,9 @@ func set_stats() -> void:
 func init_state(new_state: Status, new_substate: int = 0) -> void:
 	state = new_state
 	substate = new_substate
+	match state:
+		Status.DIE:
+			queue_free()
 
 #override this
 func handle_state(_current_state: Status, _current_substate: int) -> void:

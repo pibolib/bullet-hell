@@ -28,11 +28,11 @@ class EntitySpawnEvent:
 	var attributes: Dictionary = {}
 	var tag: String = ""
 	var uses_control_tag = false
-	func _init(entity_type: PackedScene, location: Vector2, attributes: Dictionary = {}) -> void:
+	func _init(entity: PackedScene, loc: Vector2, att: Dictionary = {}) -> void:
 		super()
-		self.entity_type = entity_type
-		self.location = location
-		self.attributes = attributes
+		self.entity_type = entity
+		self.location = loc
+		self.attributes = att
 	func set_tag(tag_name: String) -> EntitySpawnEvent: #tag functionality (to be implemented in 103)
 		self.tag = tag_name
 		return self
@@ -44,10 +44,10 @@ class BackgroundScrollEvent:
 	extends ControlEvent
 	var position_to: float
 	var time: float
-	func _init(position_to, time) -> void:
+	func _init(pos_to, t) -> void:
 		super()
-		self.position_to = position_to
-		self.time = time
+		self.position_to = pos_to
+		self.time = t
 
 #class DialogueEvent
 
@@ -63,14 +63,14 @@ class Tag:
 	var name: String
 	var value: int
 	var current_value: int = 0
-	func _init(name: String, value: int) -> void:
-		self.name = name
-		self.value = value
-	func set_value(value: int) -> Tag:
-		self.value = value
+	func _init(tag_name: String, tag_value: int) -> void:
+		self.name = tag_name
+		self.value = tag_value
+	func set_value(val: int) -> Tag:
+		self.value = val
 		return self
-	func set_current_value(value: int) -> Tag:
-		self.current_value = value
+	func set_current_value(val: int) -> Tag:
+		self.current_value = val
 		return self
 	func increment_current_value() -> Tag:
 		self.current_value += 1

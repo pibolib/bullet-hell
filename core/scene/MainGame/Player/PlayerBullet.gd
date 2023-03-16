@@ -23,7 +23,7 @@ func _ready():
 	#it can be assumed that all collisions will be with areas only
 	var collider: Area2D = $CollisionDetector.get_collider() 
 	if collider != null:
-		#enemy collision logic here
+		collider.on_bullet_collision(self)
 		pass
 
 func update_visual() -> void:

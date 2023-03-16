@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs1hvpv5gjkwd"
-path="res://.godot/imported/regular_sniper_enemy.png-5bb913e6dcbea82717b7c9963bb2f17f.ctex"
+uid="uid://k8ctvqqsye6p"
+path="res://.godot/imported/regularbullet.png-54be3623cba7f8dc9399c3af9e33ca49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/regular_sniper_enemy.png"
-dest_files=["res://.godot/imported/regular_sniper_enemy.png-5bb913e6dcbea82717b7c9963bb2f17f.ctex"]
+source_file="res://asset/gfx/regularbullet.png"
+dest_files=["res://.godot/imported/regularbullet.png-54be3623cba7f8dc9399c3af9e33ca49.ctex"]
 
 [params]
 
