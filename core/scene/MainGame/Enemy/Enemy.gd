@@ -44,6 +44,7 @@ func _process(delta):
 	#velocity -= velocity * (friction * delta)
 	if is_out_of_bounds():
 		queue_free()
+	tick(delta)
 
 func is_out_of_bounds() -> bool:
 	if position.x < 0 - GameVariables.despawn_bounds or position.x > GameVariables.screen_size.x + GameVariables.despawn_bounds or position.y < 0 - GameVariables.despawn_bounds or position.y > GameVariables.screen_size.y + GameVariables.despawn_bounds:
@@ -76,6 +77,12 @@ func handle_current_state() -> void: #version of handle_state for use in animati
 func dodge(_bullet: PlayerBullet) -> void:
 	pass
 	
+
+#override this, functions just like process(delta)
+func tick(_delta) -> void:
+	pass
+	
+
 func on_bullet_collision(bullet: PlayerBullet) -> void:
 	if dodges > 0:
 		dodge(bullet)
