@@ -2,6 +2,7 @@ extends Enemy
 class_name SniperTypeA
 
 var patterns := [preload("res://scene/MainGame/Stages/Stage1/SniperTypeAPatternA.tscn")]
+var tracking_angle : float = PI/2
 
 func set_stats() -> void:
 	hp = 1
@@ -14,6 +15,9 @@ func set_stats() -> void:
 		"shot_count": 1, #range: 1 - 4
 		"burst_delay": 2.0 #range: 0.1 - 2.0
 	}
+
+func tick(delta) -> void: # TO BE CHANGED AT A LATER DATE
+	tracking_angle = lerp_angle(tracking_angle, -get_angle_to_player(position) + PI/2, delta * 4)
 
 func init_state(new_state: Status, new_substate: int = 0) -> void:
 	super(new_state, new_substate)
