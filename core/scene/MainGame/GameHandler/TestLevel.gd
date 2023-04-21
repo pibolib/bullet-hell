@@ -32,7 +32,7 @@ func define_level():
 	time_wait(2)
 	background_scroll(250, 2)
 	for i in 5:
-		spawn_entity(RIFLE_TYPE_A, Vector2(0, 160), {"movement_speed":120})
-		spawn_entity(RIFLE_TYPE_A, Vector2(300,180), {"entry_direction":"Right"})
+		spawn_entity(SNIPER_TYPE_A, Vector2(0, 160), {"movement_speed":120})
+		spawn_entity(SNIPER_TYPE_A, Vector2(300,180), {"entry_direction":"Right"})
 		time_wait(0.4)
 	level_end()
