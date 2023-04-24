@@ -7,7 +7,7 @@ var start_point := Vector2.ZERO
 var target_point := Vector2.ZERO
 
 func _ready():
-	angle = start_point.angle_to_point(target_point)
+	#angle = start_point.angle_to_point(target_point)
 	#target_point = start_point + Vector2.from_angle(angle) * 1000
 	#initializes tween for animation of values
 	var tween: Tween = get_tree().create_tween()

@@ -14,10 +14,11 @@ func shoot_bullet_laser(_angle, bullet_type: PackedScene) -> void:
 	#here goes code for setting stats of bullet
 	add_sibling(new_bullet)
 
-func shoot_bullet_sniper(bullet_type: PackedScene) -> void:
+func shoot_bullet_sniper(angle: float, bullet_type: PackedScene) -> void:
 	var new_bullet = bullet_type.instantiate()
 	new_bullet.start_point = global_position
-	new_bullet.target_point = GameVariables.player_position
+	new_bullet.angle = angle
+	#new_bullet.target_point = GameVariables.player_position
 	add_sibling(new_bullet)
 
 func get_angle_to_player(start_position: Vector2) -> float:
