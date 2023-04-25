@@ -41,7 +41,8 @@ func handle_state(current_state: Status, current_substate: int = 0) -> void:
 			match current_substate:
 				0:
 					model.set_animation("Fire")
-					fire_pattern(patterns[0])
+					var pattern = create_pattern(patterns[0])
+					fire_pattern(pattern)
 					init_state(Status.ACTIVE, 1)
 		Status.DIE:
 			queue_free()

@@ -16,8 +16,8 @@ func set_stats() -> void:
 		"burst_delay": 2.0 #range: 0.1 - 2.0
 	}
 
-func tick(delta) -> void: # TO BE CHANGED AT A LATER DATE
-	tracking_angle = lerp_angle(tracking_angle, -get_angle_to_player(position) + PI/2, delta * 4)
+func tick(delta) -> void:
+	tracking_angle = lerp_angle(tracking_angle, get_angle_to_player(position), delta * 4)
 
 func init_state(new_state: Status, new_substate: int = 0) -> void:
 	super(new_state, new_substate)
@@ -47,7 +47,9 @@ func init_state(new_state: Status, new_substate: int = 0) -> void:
 				1:
 					model.set_animation("Fire")
 					model.queue_animation("Ready")
-					fire_pattern(patterns[0])
+					var pattern = create_pattern(patterns[0])
+					pattern.angle = tracking_angle
+					fire_pattern(pattern)
 					model.set_animation("Idle")
 					state_timer.start(0.25)
 				2:
