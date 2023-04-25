@@ -46,7 +46,8 @@ func init_state(new_state: Status, new_substate: int = 0) -> void:
 				1:
 					model.set_animation("Fire")
 					model.queue_animation("Ready")
-					fire_pattern(patterns[0])
+					var pattern = create_pattern(patterns[0])
+					fire_pattern(pattern)
 					state_timer.start(attributes.attack_barrage_delay)
 				2:
 					model.set_animation("Idle")

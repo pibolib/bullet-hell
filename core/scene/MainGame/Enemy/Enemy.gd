@@ -116,10 +116,13 @@ func set_acceleration_direction(new_direction_radians: float) -> void:
 	var current_magnitude: float = acceleration.length()
 	acceleration = Vector2.from_angle(new_direction_radians) * current_magnitude
 
-func fire_pattern(pattern: PackedScene) -> void:
+func create_pattern(pattern: PackedScene) -> Node:
 	var new_pattern := pattern.instantiate()
 	new_pattern.position = position
-	add_sibling(new_pattern)
+	return new_pattern
+
+func fire_pattern(pattern: Node) -> void:
+	add_sibling(pattern)
 
 func get_angle_to_player(start_position) -> float:
 	return start_position.angle_to_point(GameVariables.player_position)
