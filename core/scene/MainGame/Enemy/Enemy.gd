@@ -12,7 +12,7 @@ enum Status {
 @export var hp: int = 1
 @export var dodges: int = 0
 @export var score: int = 0
-@export var start_delay = 0
+@onready var start_delay = 0
 @export var model: CharacterModel
 
 #other vars
