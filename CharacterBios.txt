@@ -1,0 +1,63 @@
+Character Bios for Bullet Hell
+
+Main Character:
+- Appearance Details
+  - Semi-western appearance
+  - Jet boots
+  - Uses a revolver
+  - Shoulder-length brown hair
+  - Light blue eyes
+  - Colors:
+    - Outfit: Brown, white, blue, red (band on hat)
+    - Gear: Light blue (revolver, jet boot undersides)
+- Personality Traits
+  - Her "default" personality is on the peppier side
+    - She'll crack jokes and make witty comments on occasion
+    - She's pretty happy-go-lucky
+    - She's mostly seen with a smile
+    - She has plenty of energy and is very "active"
+  - She's serious when she needs to be
+    - She enter a calm, composed state when things get dire (i.e., during a tough battle)
+    - She'll show anger when she gets pushed far enough
+
+
+Boss 1 (Takako):
+- Appearance Details
+  - Shoulder length (slightly above shoulder) yellow hair
+  - Yellow/gold eyes
+  - Futuristic soldier's outfit
+  - General attire
+  - Wears red goggles
+  - Uses dual SMGs
+  - Colors:
+    - Outfit: Black, gray, white, bright yellow ("crystal" on chest), dark yellow (boot soles)
+    - Gear: Black, red (goggles), yellow (SMGs)
+- Personality Traits
+  - Her usual personality is cocky
+    - She tries to appear like a calm, professional general
+    - She always breaks her "character" after some talking and shows her actual personality
+    - She's a little power hungry
+    - She often laughs maniacally (in a cocky way, more comedic and less evil)
+    - She tends to look down on everyone around her
+  - She goofs off a lot and enjoys playing out a fantasy she's made for herself
+    - She sees herself as being mighty
+  - She acts like she's skilled but she's actually an amateur
+    - Her shots are pretty random, with the logic being that "a shot will eventually land"
+
+Boss 2 (Name TBD):
+- Appearance Details
+  - Long (waist length), bright pink hair tied into a ponytail
+  - Bright pink eyes
+  - Futuristic battle attire
+  - Wields a whip sword
+    - The whip sword, when extended, can shoot from the sides
+  - Colors:
+    - Outfit: Red, white, black (tights, long gloves), pink ("crystal" on chest)
+    - Gear: Black and pink-ish (whip sword)
+- Personality Traits
+  - She's normally very aloof
+    - She comes off as being calm and composed
+    - She's actually just daydreaming and thinking of other things
+    - She doesn't really focus unless she's facing an opponent
+  - She loves sweets and tea
+  - She doesn't really care all that much about her job and only really works for the high pay (which she uses on sweets)

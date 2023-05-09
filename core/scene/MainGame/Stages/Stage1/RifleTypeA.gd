@@ -52,7 +52,7 @@ func init_state(new_state: Status, new_substate: int = 0) -> void:
 				2:
 					model.set_animation("Idle")
 		Status.DIE:
-			#score bit goes here
+			GameVariables.score += score
 			model.set_animation("Die")
 			state_timer.start(1.5)
 

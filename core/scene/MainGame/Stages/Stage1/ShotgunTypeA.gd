@@ -31,7 +31,7 @@ func init_state(new_state: Status, new_substate: int = 0) -> void:
 					set_acceleration(Vector2(0, -150))
 					model.set_animation("Idle")
 		Status.DIE:
-			#score here
+			GameVariables.score += score
 			model.set_animation("Die")
 			state_timer.start(1.5)
 

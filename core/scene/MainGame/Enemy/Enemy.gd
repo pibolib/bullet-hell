@@ -75,8 +75,8 @@ func handle_current_state() -> void: #version of handle_state for use in animati
 
 #override this with dodge logic if needed
 func dodge(_bullet: PlayerBullet) -> void:
-	pass
-	
+	dodges -= 1
+	# add code to cause dodge movement here
 
 #override this, functions just like process(delta)
 func tick(_delta) -> void:
