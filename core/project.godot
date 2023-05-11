@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Global="*res://scene/Singletons/Global.gd"
 GameVariables="*res://scene/Singletons/GameVariables.gd"
+BGMHandler="*res://scene/Singletons/BGMHandler.tscn"
 
 [display]
 

@@ -1,10 +1,13 @@
 extends LevelEvent
 
-const RIFLE_TYPE_A = preload("res://scene/MainGame/Stages/Stage1/RifleTypeA.tscn")
-const SHOTGUN_TYPE_A = preload("res://scene/MainGame/Stages/Stage1/ShotgunTypeA.tscn")
-const SNIPER_TYPE_A = preload("res://scene/MainGame/Stages/Stage1/SniperTypeA.tscn")
+const RIFLE_TYPE_A := preload("res://scene/MainGame/Stages/Stage1/RifleTypeA.tscn")
+const SHOTGUN_TYPE_A := preload("res://scene/MainGame/Stages/Stage1/ShotgunTypeA.tscn")
+const SNIPER_TYPE_A := preload("res://scene/MainGame/Stages/Stage1/SniperTypeA.tscn")
+const STAGE_BGM := preload("res://asset/bgm/stage1.ogg")
 
 func define_level():
+	play_bgm(STAGE_BGM)
+	
 	background_scroll(50, 3)
 	time_wait(3)
 	background_scroll(60, 1.5)
