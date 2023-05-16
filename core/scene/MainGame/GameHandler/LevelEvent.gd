@@ -49,6 +49,13 @@ class BackgroundScrollEvent:
 		self.position_to = pos_to
 		self.time = t
 
+class MusicPlayEvent:
+	extends ControlEvent
+	var bgm_track: AudioStreamOggVorbis
+	func _init(track) -> void:
+		super()
+		self.bgm_track = track
+
 #class DialogueEvent
 
 #class TagWaitEvent
@@ -117,6 +124,8 @@ func start_event(event: Event) -> void:
 	elif event is BackgroundScrollEvent:
 		var tween = get_tree().create_tween()
 		tween.tween_property($Background, "position:y", event.position_to, event.time)
+	elif event is MusicPlayEvent:
+		BGMHandler.play_stream(event.bgm_track)
 	event_index += 1
 	if !(event is LevelEndEvent):
 		start_event(events[event_index])
@@ -138,6 +147,11 @@ func spawn_entity(type: PackedScene, location: Vector2, attributes: Dictionary =
 
 func background_scroll(pos_to: float, time: float) -> BackgroundScrollEvent:
 	var event := BackgroundScrollEvent.new(pos_to, time)
+	events.append(event)
+	return event
+
+func play_bgm(stream: AudioStreamOggVorbis) -> MusicPlayEvent:
+	var event := MusicPlayEvent.new(stream)
 	events.append(event)
 	return event
 

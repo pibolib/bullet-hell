@@ -1,0 +1,48 @@
+------------PLAYER'S GUIDE FOR (game name TBD)------------
+
+> Overview
+This game is a bullet hell that adds on to the difficulty by using a player aiming system. Players can move their mouse left and right to adjust the angle of the shots before they are fired. All of this is done while the player also attempts to avoid shots fired by the enemies to avoid taking damage. A combination of good aim and strong dodging skills is needed to complete this game successfully.
+
+> Story
+The (company name TBD) created technology that allows for modern, cyborg-like soldiers to be created. With this newfound power, they are trying to take over the world, one country at a time. They haven't made it too far, though; they're still trying to take over their home country before they move on to the others. They've conquered most of the country, and they're approaching the (MC)'s hometown before (the MC) decides to take action to prevent her peaceful hometown from being invaded. After grabbing her gear and trusty revolver, she heads out to face off against (the company).
+
+> Controls
+WASD - Movement. W to move up, S to move down, A to move left, and D to move right.
+Mouse movement - Control (MC)'s shot angle.
+Left click - Fire a shot.
+Right click/Shift - Go into focus fire mode.
+
+> Gameplay
+The game is split up into stages, which are further split up into waves. Each wave contains groups of enemies that approach the player as they attempt to stop them. Defeating all enemies in a wave, or waiting for all of them to leave, will result in the progression of the stage. At the end of a stage, a boss will appear. The boss must be defeated to continue to the next stage.
+
+The player has 3 lives to make it through the game with. If the player touches an enemy or an enemy bullet, a life will be lost. Defeating enemies will cause an increase in the player's score, with the score increase differing depending on the enemy type. Each stage cleared also increases the score by a certain amount.
+
+The player must move around to dodge bullets and aim their shots with their mouse. Clicking and holding down left click plays an animation that shows the shot path of the player's shot, and releasing left click will fire the shot. Simply clicking also fires a shot, but it will lack an aiming display to show where the player's shot will be fired.
+
+A focus fire mode is featured, which allows the player to slow down their movements for more precision, making it easier to dodge bullets, as well as increasing the aiming animation speed. The animation for the shot path display will also be sped up, making precise aiming quicker. To trigger this, hold down right click or shift. Release the aforementioned keys to exist focus fire mode.
+
+
+> Enemies
+There are currently 5 enemies in the game.
+
+- Rifle
+Fires standard shots in bursts and has 1 HP. Approaches the stage from either the top or sides.
+
+- Shotgun
+Fires spread shots and has 1 HP. Generally approaches the player directly.
+
+- Sniper
+Slowly adjusts their aim towards the player and fires sniper shots in spurts. They have 1 dodge and 1 hp. The dodge replenishes over time, so they must be quickly shot at twice to be defeated.
+
+- Pistol
+Fires standard shots and has 1 HP. Approaches the stage from either the top or sides.
+
+- Drone
+Fires standard shots in a circle around it and has 1 HP. Approaches the stage from either the top or sides.
+
+
+> Bosses
+Currently, one boss exists.
+
+- Takako
+TBD

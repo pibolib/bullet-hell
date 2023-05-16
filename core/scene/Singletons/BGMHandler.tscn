@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cljggg4nr3t3l"]
+
+[ext_resource type="Script" path="res://scene/Singletons/BGMHandler.gd" id="1_dhu62"]
+
+[node name="BGMHandler" type="AudioStreamPlayer"]
+script = ExtResource("1_dhu62")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
