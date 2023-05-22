@@ -4,6 +4,7 @@ const RIFLE_TYPE_A := preload("res://scene/MainGame/Stages/Stage1/RifleTypeA.tsc
 const SHOTGUN_TYPE_A := preload("res://scene/MainGame/Stages/Stage1/ShotgunTypeA.tscn")
 const SNIPER_TYPE_A := preload("res://scene/MainGame/Stages/Stage1/SniperTypeA.tscn")
 const STAGE_BGM := preload("res://asset/bgm/stage1.ogg")
+const BOSS_BGM := preload("res://asset/bgm/boss1.ogg")
 
 func define_level():
 	play_bgm(STAGE_BGM)
@@ -38,4 +39,5 @@ func define_level():
 		spawn_entity(SNIPER_TYPE_A, Vector2(0, 160), {"movement_speed":120})
 		spawn_entity(SNIPER_TYPE_A, Vector2(300,180), {"entry_direction":"Right"})
 		time_wait(0.4)
+	play_bgm(BOSS_BGM)
 	level_end()
