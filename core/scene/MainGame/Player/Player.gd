@@ -25,6 +25,7 @@ func _unhandled_input(event):
 func _process(delta):
 	#handle input detection (properly handles multidirectional movement)
 	var is_moving = false
+	focused = false
 	if Input.is_action_pressed("ingame_move_up"):
 		movement_angle = 3*TAU/4
 		is_moving = true
@@ -43,9 +44,13 @@ func _process(delta):
 		else:
 			movement_angle = 0
 		is_moving = true
+	if Input.is_action_pressed("ingame_focus"):
+		focused = true
 	
 	#creates the velocity vector from the angle of movement, player speed constant, boolean control of movement, and a multiplier based on the focus status
 	velocity = Vector2.from_angle(movement_angle) * PLAYER_SPEED * int(is_moving)# * (PLAYER_SPEED_FOCUS_MODIFIER * int(focused))
+	if focused:
+		velocity *= PLAYER_SPEED_FOCUS_MODIFIER
 	velocity = round(velocity)
 	position += velocity * delta
 	position.x = clamp(position.x, 0, 300)
