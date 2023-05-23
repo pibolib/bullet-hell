@@ -51,7 +51,7 @@ func init_state(new_state: Status, new_substate: int = 0) -> void:
 			GameVariables.score += score
 			model.set_animation("Die")
 			state_timer.start(1.5)
-	
+#this function handles the states.			
 func handle_state(current_state: Status, current_substate: int = 0) -> void:
 	match current_state:
 		Status.IDLE:
