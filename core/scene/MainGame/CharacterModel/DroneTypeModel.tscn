@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb0tfr6031nao"]
+
+[ext_resource type="Texture2D" uid="uid://cf1tkbglldak8" path="res://asset/gfx/rifle1.png" id="1_7chqw"]
+
+[node name="DroneTypeModel" type="Node2D"]
+
+[node name="Model" type="Node2D" parent="."]
+
+[node name="Body" type="Sprite2D" parent="Model"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Reference" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-68, -20)
+texture = ExtResource("1_7chqw")
+metadata/_edit_lock_ = true

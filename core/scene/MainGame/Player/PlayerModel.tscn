@@ -34,7 +34,7 @@ region_rect = Rect2(21, 5, 7, 8)
 z_index = 5
 texture = ExtResource("2_qw88x")
 region_enabled = true
-region_rect = Rect2(5, 0, 11, 14)
+region_rect = Rect2(4, 0, 11, 13)
 
 [node name="Hat" type="Sprite2D" parent="CanvasGroup/Head"]
 z_index = 6
@@ -46,7 +46,7 @@ region_rect = Rect2(49, 3, 15, 10)
 [node name="Torso" type="Sprite2D" parent="CanvasGroup"]
 texture = ExtResource("2_qw88x")
 region_enabled = true
-region_rect = Rect2(4, 17, 13, 10)
+region_rect = Rect2(4, 17, 11, 10)
 
 [node name="Jacket" type="Sprite2D" parent="CanvasGroup/Torso"]
 z_index = 4
@@ -54,39 +54,39 @@ position = Vector2(0, 3)
 texture = ExtResource("2_qw88x")
 offset = Vector2(0, 0.5)
 region_enabled = true
-region_rect = Rect2(43, 30, 15, 17)
+region_rect = Rect2(44, 30, 13, 17)
 
 [node name="Arm" type="Node2D" parent="CanvasGroup/Torso"]
 unique_name_in_owner = true
 
 [node name="Arms" type="Sprite2D" parent="CanvasGroup/Torso/Arm"]
-position = Vector2(-0.5, -15)
+position = Vector2(0, -6)
 texture = ExtResource("2_qw88x")
 region_enabled = true
-region_rect = Rect2(34, 20, 2, 6)
+region_rect = Rect2(34, 18, 2, 10)
 
 [node name="Hand" type="Sprite2D" parent="CanvasGroup/Torso/Arm"]
-position = Vector2(-1.5, -20)
+position = Vector2(-1.5, -14)
 texture = ExtResource("2_qw88x")
 offset = Vector2(1, 0.5)
 region_enabled = true
 region_rect = Rect2(34, 7, 3, 5)
 
 [node name="Arms2" type="Sprite2D" parent="CanvasGroup/Torso/Arm"]
-position = Vector2(0.5, -16)
+position = Vector2(0.5, -7)
 texture = ExtResource("2_qw88x")
 region_enabled = true
-region_rect = Rect2(44, 20, 2, 6)
+region_rect = Rect2(44, 18, 2, 10)
 
 [node name="Hand2" type="Sprite2D" parent="CanvasGroup/Torso/Arm"]
-position = Vector2(-0.5, -21)
+position = Vector2(-0.5, -15)
 texture = ExtResource("2_qw88x")
 offset = Vector2(1, 0.5)
 region_enabled = true
 region_rect = Rect2(43, 7, 3, 5)
 
 [node name="Gun" type="Sprite2D" parent="CanvasGroup/Torso/Arm"]
-position = Vector2(-0.5, -24)
+position = Vector2(-0.5, -18)
 texture = ExtResource("2_qw88x")
 offset = Vector2(0.5, 0.5)
 region_enabled = true
@@ -94,24 +94,24 @@ region_rect = Rect2(56, 17, 3, 11)
 
 [node name="BulletSpawn" type="Marker2D" parent="CanvasGroup/Torso/Arm"]
 unique_name_in_owner = true
-position = Vector2(0, -29)
+position = Vector2(0, -23)
 
 [node name="Legs" type="Sprite2D" parent="CanvasGroup"]
 position = Vector2(0, 9)
 texture = ExtResource("2_qw88x")
 region_enabled = true
-region_rect = Rect2(4, 30, 13, 8)
+region_rect = Rect2(4, 30, 11, 8)
 
 [node name="FootL" type="Sprite2D" parent="CanvasGroup/Legs"]
-position = Vector2(-7, 8)
+position = Vector2(-4, 4)
 texture = ExtResource("2_qw88x")
-offset = Vector2(0, 0.5)
+offset = Vector2(-2, 3)
 region_enabled = true
-region_rect = Rect2(0, 41, 7, 9)
+region_rect = Rect2(0, 41, 5, 6)
 
 [node name="FootR" type="Sprite2D" parent="CanvasGroup/Legs"]
-position = Vector2(7, 8)
+position = Vector2(4, 4)
 texture = ExtResource("2_qw88x")
-offset = Vector2(0, 0.5)
+offset = Vector2(2, 3)
 region_enabled = true
-region_rect = Rect2(14, 41, 7, 9)
+region_rect = Rect2(13, 41, 5, 6)

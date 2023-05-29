@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkhdoyflqcyir"]
+
+[ext_resource type="Texture2D" uid="uid://cf1tkbglldak8" path="res://asset/gfx/rifle1.png" id="1_u5tlp"]
+
+[node name="PistolTypeModel" type="Node2D"]
+
+[node name="Model" type="Node2D" parent="."]
+
+[node name="Head" type="Sprite2D" parent="Model"]
+
+[node name="Torso" type="Sprite2D" parent="Model"]
+
+[node name="Rest" type="Node2D" parent="Model/Torso"]
+visible = false
+
+[node name="ArmL" type="Sprite2D" parent="Model/Torso/Rest"]
+
+[node name="ArmR" type="Sprite2D" parent="Model/Torso/Rest"]
+
+[node name="Gun" type="Sprite2D" parent="Model/Torso/Rest"]
+
+[node name="HandL" type="Sprite2D" parent="Model/Torso/Rest/Gun"]
+
+[node name="HandR" type="Sprite2D" parent="Model/Torso/Rest/Gun"]
+
+[node name="Aim" type="Node2D" parent="Model/Torso"]
+
+[node name="ArmL" type="Sprite2D" parent="Model/Torso/Aim"]
+
+[node name="ArmR" type="Sprite2D" parent="Model/Torso/Aim"]
+
+[node name="GunAimed" type="Sprite2D" parent="Model/Torso/Aim"]
+unique_name_in_owner = true
+
+[node name="ArmL" type="Sprite2D" parent="Model/Torso/Aim/GunAimed"]
+
+[node name="HandL" type="Sprite2D" parent="Model/Torso/Aim/GunAimed/ArmL"]
+
+[node name="ArmR" type="Sprite2D" parent="Model/Torso/Aim/GunAimed"]
+
+[node name="HandR" type="Sprite2D" parent="Model/Torso/Aim/GunAimed/ArmR"]
+
+[node name="MuzzleFlash" type="Polygon2D" parent="Model/Torso/Aim/GunAimed"]
+
+[node name="Legs" type="Sprite2D" parent="Model"]
+
+[node name="FootL" type="Sprite2D" parent="Model/Legs"]
+
+[node name="FootR" type="Sprite2D" parent="Model/Legs"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Reference" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-68, -20)
+texture = ExtResource("1_u5tlp")
+metadata/_edit_lock_ = true
