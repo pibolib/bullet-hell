@@ -7,17 +7,17 @@ var patterns :=[preload("res://scene/MainGame/Stages/Stage1/DroneTypeA.tscn")]
 func set_stats() -> void:
 	hp=1
 	dodges=0
-	score=200
+	score=400
 	attribute_defaults={
 		"entry_direction":"Left",
 		"movement_trend":"Up",
 		"attack_type":"Aimed",
-		"attack_barrage_delay":0.15,
-		"attack_count":3,
+		"attack_barrage_delay":0.25,
+		"attack_count":1,
 		"movement_speed":80
 	}
 	
-#Setting initial states	
+	
 func init_state(new_state: Status, new_substate: int = 0) -> void:
 	super(new_state, new_substate)
 	match new_state:
@@ -31,7 +31,7 @@ func init_state(new_state: Status, new_substate: int = 0) -> void:
 				"Up":
 					set_acceleration(Vector2(0, -10))
 				"Down":
-					set_acceleration(Vector2(0, 10))
+					set_acceleration(Vector2(0 , 10))
 			model.set_animation("Idle")
 			state_timer.start(0.5)
 		Status.ACTIVE:
@@ -51,7 +51,7 @@ func init_state(new_state: Status, new_substate: int = 0) -> void:
 			GameVariables.score += score
 			model.set_animation("Die")
 			state_timer.start(1.5)
-#this function handles the states.			
+	
 func handle_state(current_state: Status, current_substate: int = 0) -> void:
 	match current_state:
 		Status.IDLE:
@@ -68,8 +68,3 @@ func handle_state(current_state: Status, current_substate: int = 0) -> void:
 						init_state(Status.ACTIVE, 1)
 		Status.DIE:
 			queue_free() 
-	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
