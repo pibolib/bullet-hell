@@ -55,6 +55,11 @@ class MusicPlayEvent:
 	func _init(track) -> void:
 		super()
 		self.bgm_track = track
+		
+class MusicStopEvent:
+	extends ControlEvent
+	func _init() -> void:
+		super()
 
 #class DialogueEvent
 
@@ -126,6 +131,8 @@ func start_event(event: Event) -> void:
 		tween.tween_property($Background, "position:y", event.position_to, event.time)
 	elif event is MusicPlayEvent:
 		BGMHandler.play_stream(event.bgm_track)
+	elif event is MusicStopEvent:
+		BGMHandler.stop_stream()
 	event_index += 1
 	if !(event is LevelEndEvent):
 		start_event(events[event_index])

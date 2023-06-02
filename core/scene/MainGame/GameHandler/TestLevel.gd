@@ -9,6 +9,7 @@ const BOSS_BGM := preload("res://asset/bgm/boss1.ogg")
 func define_level():
 	play_bgm(STAGE_BGM)
 	
+	time_wait(5)
 	background_scroll(50, 3)
 	time_wait(3)
 	background_scroll(60, 1.5)
