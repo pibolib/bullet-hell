@@ -3,18 +3,18 @@ extends LevelEvent
 const RIFLE_TYPE_A := preload("res://scene/MainGame/Stages/Stage1/RifleTypeA.tscn")
 const SHOTGUN_TYPE_A := preload("res://scene/MainGame/Stages/Stage1/ShotgunTypeA.tscn")
 const SNIPER_TYPE_A := preload("res://scene/MainGame/Stages/Stage1/SniperTypeA.tscn")
+const DRONE_TYPE_A := preload("res://scene/MainGame/Stages/Stage1/DroneTypeA.tscn")
 const STAGE_BGM := preload("res://asset/bgm/stage1.ogg")
 const BOSS_BGM := preload("res://asset/bgm/boss1.ogg")
 
 func define_level():
 	play_bgm(STAGE_BGM)
 	
-	time_wait(5)
 	background_scroll(50, 3)
 	time_wait(3)
 	background_scroll(60, 1.5)
 	for i in 5:
-		spawn_entity(RIFLE_TYPE_A, Vector2(0, 100))
+		spawn_entity(DRONE_TYPE_A, Vector2(0, 100))
 		time_wait(0.3)
 	background_scroll(100, 1)
 	time_wait(1)
