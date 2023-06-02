@@ -2,7 +2,7 @@ extends Enemy
 
 class_name DroneTypeA
 
-var patterns :=[preload("res://scene/MainGame/Stages/Stage1/DroneTypeA.tscn")]
+var patterns :=[preload("res://scene/MainGame/Stages/Stage1/DroneTypeAPatternA.tscn")]
 
 func set_stats() -> void:
 	hp=1
