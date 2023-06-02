@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://oy41ksfqqyij"]
 
 [ext_resource type="Script" path="res://scene/MainGame/Stages/Stage1/DroneTypeA.gd" id="1_yu253"]
-[ext_resource type="PackedScene" uid="uid://cg7uwdsw7aoub" path="res://scene/MainGame/CharacterModel/ModelPlaceholder.tscn" id="2_njd4h"]
+[ext_resource type="PackedScene" uid="uid://bb0tfr6031nao" path="res://scene/MainGame/CharacterModel/DroneTypeModel.tscn" id="2_v4iw7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wud5u"]
 
@@ -9,9 +9,9 @@
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_yu253")
-model = NodePath("ModelPlaceholder")
+model = NodePath("DroneTypeModel")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_wud5u")
 
-[node name="ModelPlaceholder" parent="." instance=ExtResource("2_njd4h")]
+[node name="DroneTypeModel" parent="." instance=ExtResource("2_v4iw7")]
