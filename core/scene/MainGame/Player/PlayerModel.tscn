@@ -96,6 +96,11 @@ region_rect = Rect2(56, 17, 3, 11)
 unique_name_in_owner = true
 position = Vector2(0, -23)
 
+[node name="AimingIndicator" type="Polygon2D" parent="CanvasGroup/Torso/Arm"]
+position = Vector2(0, -3)
+color = Color(1, 1, 1, 0.501961)
+polygon = PackedVector2Array(0, -34, -4, -23, 0, -26, 4, -23)
+
 [node name="Legs" type="Sprite2D" parent="CanvasGroup"]
 position = Vector2(0, 9)
 texture = ExtResource("2_qw88x")
